@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" /> <!-- Null 값 처리 -->
+	</settings>
+	<typeAliases> <!-- Class 별칭을 선언하여 모든 경로를 적어주지 않아도 된다. -->
+		<typeAlias type="member.model.vo.Member" alias="Member" />
+		
+	</typeAliases>
+
+	<mappers>
+		<!-- SQL을 선언해 둔 XML이나 인터페이스 형태의 Mapper 위치를 지정한다 -->
+		<mapper resource="mappers/member-mapper.xml" />
+	</mappers>
+</configuration>

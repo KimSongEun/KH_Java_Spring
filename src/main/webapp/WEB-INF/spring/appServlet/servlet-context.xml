@@ -23,6 +23,18 @@
 	
 	<context:component-scan base-package="com.mycompany.myapp01" />
 	
-	
+	<beans:bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="configLocation"
+			value="classpath:mybatis-config.xml" />
+	</beans:bean>
+
+	<beans:bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg ref="sqlSessionFactory" />
+	</beans:bean>
 	
 </beans:beans>
+
+
